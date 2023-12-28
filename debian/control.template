@@ -1,0 +1,17 @@
+Source: multiflexi-all
+Section: unknown
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 11), apt, sed
+Standards-Version: 4.5.1
+Homepage: https://github.com/VitexSoftware/multiflexi-all
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/VitexSoftware/multiflexi-all
+Vcs-Browser: https://github.com/VitexSoftware/multiflexi-all.git
+
+Package: multiflexi-all
+Architecture: any
+Multi-Arch: foreign
+Depends: multiflexi
+Description: Debian metapackage to install all availble MultiFlexi addons 
+ Full MultiFlexi

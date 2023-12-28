@@ -1,0 +1,31 @@
+#!/bin/sh
+sudo apt -q update 
+ALL_PACKAGES=$(apt-cache -q search multiflexi | awk '{print $1}')
+echo $ALL_PACKAGES
+
+# define blacklist of packages to be grep'ed out
+
+OPTIONAL_PACKAGES="
+multiflexi-mysql
+multiflexi-pgsql
+multiflexi-sqlite
+"
+
+# Remove optional packages from the list of all packages
+
+for i in $OPTIONAL_PACKAGES
+do
+    ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
+done
+
+echo $ALL_PACKAGES | sed "s/ /\n/g"
+
+# Replace spaces with commas in the list of all packages
+
+ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/ /,/g")
+
+# Replace Depends: in file debian/control by $ALL_PACKAGES
+sed "s/^Depends:.*/Depends: $ALL_PACKAGES/g" debian/control.template > debian/control
+
+
+

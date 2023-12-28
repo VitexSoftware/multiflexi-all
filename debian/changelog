@@ -1,0 +1,6 @@
+multiflexi-all (0.1.0) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 28 Dec 2023 22:27:34 +0100
