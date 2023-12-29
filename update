@@ -6,6 +6,7 @@ echo $ALL_PACKAGES
 # define blacklist of packages to be grep'ed out
 
 OPTIONAL_PACKAGES="
+multiflexi-all
 multiflexi-mysql
 multiflexi-pgsql
 multiflexi-sqlite
@@ -30,6 +31,3 @@ sed "s/^Depends:.*/Depends: $ALL_PACKAGES/g" debian/control.template > debian/co
 
 sudo chmod 644 debian/control
 sudo chown jenkins:jenkins debian/control
-
-
-
