@@ -20,7 +20,12 @@ do
     ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
 done
 
+echo
+echo "######################### Packages included ######################################"
+echo
 echo $ALL_PACKAGES | sed "s/ /\n/g"
+echo
+echo "##################################################################################"
 
 # Replace spaces with commas in the list of all packages
 
