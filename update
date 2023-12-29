@@ -9,6 +9,7 @@ OPTIONAL_PACKAGES="
 multiflexi-mysql
 multiflexi-pgsql
 multiflexi-sqlite
+multiflexi-podman
 "
 
 # Remove optional packages from the list of all packages
