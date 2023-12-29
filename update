@@ -27,5 +27,6 @@ ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/ /,/g")
 # Replace Depends: in file debian/control by $ALL_PACKAGES
 sed "s/^Depends:.*/Depends: $ALL_PACKAGES/g" debian/control.template > debian/control
 
+chmod 644 debian/control
 
 
