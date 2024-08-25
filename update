@@ -13,12 +13,24 @@ multiflexi-sqlite
 multiflexi-podman
 "
 
+BLOCKED_PACKAGES="
+multiflexi-pohoda-client-config
+"
+
 # Remove optional packages from the list of all packages
 
 for i in $OPTIONAL_PACKAGES
 do
     ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
 done
+
+# Remove blocked packages from the list of all packages
+
+for i in $BLOCKED_PACKAGES
+do
+    ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
+done
+
 
 echo
 echo "######################### Packages included ######################################"
@@ -31,8 +43,27 @@ echo "##########################################################################
 
 ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/ /,/g")
 
+
 # Replace Depends: in file debian/control by $ALL_PACKAGES
 sed "s/^Depends:.*/Depends: $ALL_PACKAGES/g" debian/control.template > debian/control
+
+# Cut everything after ## Packages included in README.md
+sed -i '/## Packages included/,$d' README.md
+
+# Update README.md file with current ALL_PACKAGES contents
+echo >> README.md
+echo "## Packages included" >> README.md
+echo >> README.md
+echo "| Name | URL |" >> README.md
+echo "|------|-----|" >> README.md
+
+for package in $(echo "$ALL_PACKAGES" | tr ',' '\n'); do
+    url=$(aptitude show $package | grep -m1 '^Homepage:' | awk '{print $2}')
+    echo "| $package | $url |" >> README.md
+done
+
+echo >> README.md
+echo "Please refer to the individual package documentation for more information." >> README.md
 
 sudo chmod 644 debian/control
 sudo chown jenkins:jenkins debian/control
