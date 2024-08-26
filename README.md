@@ -23,6 +23,7 @@ See the full list of ready-to-run applications within the MultiFlexi platform on
 [![MultiFlexi App](https://github.com/VitexSoftware/MultiFlexi/blob/main/doc/multiflexi-app.svg)](https://www.multiflexi.eu/apps.php)
 
 
+
 ## Packages included
 
 | Name | URL |

@@ -2,3 +2,5 @@ debian/control
 debian/files
 debian/multiflexi-all
 debian/.debhelper
+debian/debhelper-build-stamp
+debian/multiflexi-all.substvars
