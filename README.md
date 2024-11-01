@@ -33,7 +33,7 @@ See the full list of ready-to-run applications within the MultiFlexi platform on
 | multiflexi-abraflexi-contract-invoices | https://github.com/VitexSoftware/abraflexi-contract-invoices |
 | multiflexi-abraflexi-digest | https://github.com/VitexSoftware/AbraFlexi-Digest |
 | multiflexi-abraflexi-email-importer | https://github.com/VitexSoftware/AbraFlexi-email-importer |
-| multiflexi-abraflexi-kimai-importer | https://github.com/VitexSoftware/Kimai2AbraFlexi/settings |
+| multiflexi-abraflexi-kimai-importer | https://github.com/VitexSoftware/Kimai2AbraFlexi |
 | multiflexi-abraflexi-mailer | https://github.com/VitexSoftware/php-abraflexi-mailer |
 | multiflexi-abraflexi-matcher | https://github.com/VitexSoftware/php-abraflexi-matcher |
 | multiflexi-abraflexi-pricefixer | https://github.com/VitexSoftware/AbraFlexi-pricefixer |
