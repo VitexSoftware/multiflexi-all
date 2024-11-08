@@ -14,6 +14,8 @@ sudo apt update
 sudo apt install multiflexi-all
 ```
 
+![img](install.jpg?raw=true)
+
 MultiFlexi
 ----------
 
