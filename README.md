@@ -1,7 +1,8 @@
 # multiflexi with all addons
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/multiflexi-all.svg)](https://repology.org/project/multiflexi-all/versions)
-[![GitHub issues](https://img.shields.io/github/issues/VitexSoftware/multiflexi-all.svg)](Debian metapackage to install all availble MultiFlexi addons)
+![GitHub issues](https://img.shields.io/github/issues/VitexSoftware/multiflexi-all.svg)
+
+Debian metapackage to install all availble MultiFlexi addons
 
 ## Installation
 ```bash
