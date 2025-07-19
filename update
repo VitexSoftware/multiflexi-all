@@ -1,35 +1,18 @@
 #!/bin/sh
 sudo apt -q update 
 ALL_PACKAGES=$(apt-cache -q search multiflexi | awk '{print $1}')
-echo $ALL_PACKAGES
 
-# define blacklist of packages to be grep'ed out
+# define blacklist of packages to be filtered out
+OPTIONAL_PACKAGES="multiflexi-all multiflexi-mysql multiflexi-pgsql multiflexi-sqlite multiflexi-podman"
+BLOCKED_PACKAGES="multiflexi-pohoda-client-config php-vitexsoftware-multiflexi-core php-vitexsoftware-multiflexi-core-dev php-vitexsoftware-multiflexi-server php-vitexsoftware-multiflexi-server-dev"
 
-OPTIONAL_PACKAGES="
-multiflexi-all
-multiflexi-mysql
-multiflexi-pgsql
-multiflexi-sqlite
-multiflexi-podman
-"
 
-BLOCKED_PACKAGES="
-multiflexi-pohoda-client-config
-"
-
-# Remove optional packages from the list of all packages
-
-for i in $OPTIONAL_PACKAGES
-do
-    ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
+# Remove optional and blocked packages from the list of all packages using grep for POSIX sh compatibility
+ALL_PACKAGES_LIST=$(echo "$ALL_PACKAGES" | tr ' ' '\n')
+for pkg in $OPTIONAL_PACKAGES $BLOCKED_PACKAGES; do
+    ALL_PACKAGES_LIST=$(echo "$ALL_PACKAGES_LIST" | grep -vwF "$pkg")
 done
-
-# Remove blocked packages from the list of all packages
-
-for i in $BLOCKED_PACKAGES
-do
-    ALL_PACKAGES=$(echo $ALL_PACKAGES | sed "s/$i//g")
-done
+ALL_PACKAGES=$(echo "$ALL_PACKAGES_LIST" | tr '\n' ' ')
 
 
 echo
@@ -66,4 +49,6 @@ echo >> README.md
 echo "Please refer to the individual package documentation for more information." >> README.md
 
 sudo chmod 644 debian/control
-sudo chown jenkins:jenkins debian/control
+if id "jenkins" >/dev/null 2>&1; then
+    sudo chown jenkins:jenkins debian/control
+fi
