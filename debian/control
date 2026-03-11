@@ -1,0 +1,17 @@
+Source: multiflexi-all
+Section: unknown
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 11), apt, sed
+Standards-Version: 4.5.1
+Homepage: https://github.com/VitexSoftware/multiflexi-all
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/VitexSoftware/multiflexi-all
+Vcs-Browser: https://github.com/VitexSoftware/multiflexi-all.git
+
+Package: multiflexi-all
+Architecture: all
+Multi-Arch: foreign
+Depends: multiflexi,multiflexi-abraflexi-client-check,multiflexi-abraflexi-contract-invoices,multiflexi-abraflexi-digest,multiflexi-abraflexi-email-importer,multiflexi-abraflexi-kimai-importer,multiflexi-abraflexi-mailer,multiflexi-abraflexi-matcher,multiflexi-abraflexi-pricefixer,multiflexi-abraflexi-raiffeisenbank,multiflexi-abraflexi-reminder,multiflexi-abraflexi-revolut,multiflexi-abraflexi-tools,multiflexi-api,multiflexi-discomp2abraflexi,multiflexi-fiobank-statement-downloader,multiflexi-pohoda-client-checker,multiflexi-pohoda-raiffeisenbank,multiflexi-raiffeisenbank-statement-downloader,multiflexi-raiffeisenbank-statement-tools,multiflexi-realpad2mailkit,multiflexi-redmine2abraflexi,multiflexi-sms-input,multiflexi-subreg2abraflexi,multiflexi-zabbix
+Description: Debian metapackage to install all availble MultiFlexi addons 
+ Full MultiFlexi
