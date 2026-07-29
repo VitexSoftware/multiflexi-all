@@ -1,6 +1,8 @@
 # multiflexi with all addons
 
 ![GitHub issues](https://img.shields.io/github/issues/VitexSoftware/multiflexi-all.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 Debian metapackage to install all availble MultiFlexi addons
 
